@@ -8,6 +8,10 @@ Follow the instructions below to clone this repositoy in your local Machine.
 git clone https://github.com/HimblerCap/Differentiable-Feature-Clustering.git
 cd Differentiable-Feature-Clustering
 
+python -m venv venv
+source ./venv/Scripts/activate
+pip install -r requirements.txt
+
 ```
 
 ## Model Arquitecture
