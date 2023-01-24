@@ -14,7 +14,7 @@ pip install -r requirements.txt
 
 ```
 
-## Model Arquitecture
+## Model Architecture
 The architecture of the model is made up of a feature extractor that contains 3 convolutional layers with filters equal to 100 accompanied by the ReLu activation function and a BatchNormalization layer. The final structure of the neural network is made up of a convolutional layer with a one-dimensional kernel and a number of filters equal to 100, culminating in a BatchNormalization layer.
 
 ![Model Arquitecture](https://github.com/HimblerCap/Differentiable-Feature-Clustering/blob/master/img/Model%20Arquitecture.png?raw=true)
