@@ -1,7 +1,8 @@
 import tensorflow as tf
+import keras
 
 
-class Loss:
+class CustomLoss(keras.losses.Loss):
     """
         Custom Loss for our Differential Feature Cluster Implementation with TensorFlow,
         these loss consists of a constraint on feature similiarity and constraint on spatial
@@ -20,12 +21,14 @@ class Loss:
             height: height shape of the image
 
         """
+        super().__init__(name='custom_loss')
+
         self.mu = mu
         self.q = q
         self.width = width
         self.height = height
 
-    def losses(self, y_true, y_pred):
+    def call(self, y_true, y_pred):
         """Calculate feature similiarity loss and spatial continuity loss
 
            Args:
