@@ -22,7 +22,6 @@ def preprocessing(image):
 
         Arg:
         image: image that we want to preprocess
-
     """
 
     data = tf.cast(image, dtype='float32') / 255.0
@@ -40,7 +39,6 @@ def inference(model, image):
        Args:
        model: Difference Feature Clustering model
        image: image that we want to segmented
-
     """
     c_n = model(image)
     c_n = tf.argmax(c_n, axis=3)
@@ -55,7 +53,6 @@ def plot_pictures(predict_image, real_image):
        Args:
        predict_image: Segmented Image
        real_image: real image of our dataset
-
     """
     plt.figure(figsize=(25, 15))
     plt.subplot(121)
