@@ -1,5 +1,5 @@
-import tensorflow as tf 
 import keras
+
 
 class DiffFeatureModel(keras.Model):
     """Custom Keras class for our Diff Feature Clustering Implementation
@@ -11,11 +11,13 @@ class DiffFeatureModel(keras.Model):
             - img_shape: Shape of the input image
             - M: number of convolutional layers for the feature extractor
             - p: number of filters used on each conv laayer
-            - q: number of """
+            - q: number of
+        """
+
         super(DiffFeatureModel, self).__init__()
         self.shape = img_shape
         self.p = p
-        self.q = q 
+        self.q = q
         self.M = m
         self.conv1 = keras.layers.Conv2D(filters=self.p, kernel_size=3, padding='same')
         self.relu1 = keras.layers.Activation('relu')
