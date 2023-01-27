@@ -26,6 +26,7 @@ def preprocessing(image):
     """
 
     data = tf.cast(image, dtype='float32') / 255.0
+    data = tf.image.resize(data, size=[int(data.shape[0]*0.9), int(data.shape[1]*0.9)])
     data = tf.reshape(data, (1, data.shape[0], data.shape[1], data.shape[2]))
     width = data.shape[1]
     height = data.shape[2]
