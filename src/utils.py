@@ -24,7 +24,7 @@ def preprocessing(image):
     Arg:
         image: image that we want to preprocess
 
-    Return: 
+    Return:
         data: The preprocessed image
         width: image width
         height: image height
@@ -44,9 +44,9 @@ def inference(model, image):
 
     Args:
        model: Difference Feature Clustering model
-       image: image that we want to segmented
-    
-    Return: 
+       image: image that we want to segment
+
+    Return:
         c_n: output of our model with the best prediction
     """
     c_n = model(image)
@@ -63,10 +63,10 @@ def plot_pictures(predict_image, real_image):
        predict_image: Segmented Image
        real_image: real image of our dataset
 
-    Return: 
+    Return:
         Plot the real image and the segmented image
     """
-    
+
     plt.figure(figsize=(25, 15))
     plt.subplot(121)
     plt.imshow(real_image)

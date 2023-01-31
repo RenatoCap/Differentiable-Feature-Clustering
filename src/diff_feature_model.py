@@ -1,4 +1,5 @@
 import keras
+import tensorflow as tf
 
 
 class DiffFeatureModel(keras.Model):
@@ -29,7 +30,7 @@ class DiffFeatureModel(keras.Model):
         self.batchnorm_response = keras.layers.BatchNormalization()
         self.build(input_shape=(1, self.shape[0], self.shape[1], 3))
 
-    def call(self, inputs):
+    def call(self, inputs, **kwargs):
         """This method implements the forward pass of the algorithm.
         1st step: Conv2D, ReLU, BatchNormalization (specifying input dim)
         2nd step: Conv2D, RelU, BatchNormalization ((nConv - 1) times)
@@ -41,10 +42,23 @@ class DiffFeatureModel(keras.Model):
         x = self.relu1(x)
         x = self.batchnorm1(x)
 
-        for i in range(self.M-1):
+        for i in range(self.M - 1):
             x = self.conv_list[i](x)
             x = self.relu_list[i](x)
             x = self.batchnorm_list[i](x)
 
         x = self.conv_response(x)
         return self.batchnorm_response(x)
+
+    def train_step(self, data):
+        input_img = data
+
+        with tf.GradientTape() as tape:
+            output = self(input_img, training=True)
+            loss = self.compiled_loss(output, output)
+
+        trainable_vars = self.trainable_variables
+        gradients = tape.gradient(target=loss, sources=trainable_vars)
+        self.optimizer.apply_gradients(zip(gradients, trainable_vars))
+        self.compiled_metrics.update_state(output, output)
+        return {m.name: m.result() for m in self.metrics}
