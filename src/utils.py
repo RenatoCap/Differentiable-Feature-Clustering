@@ -4,8 +4,10 @@ import tensorflow_datasets as tfds
 
 
 def load_image():
-    """
-        Load one image from cassava datasets
+    """Load one image from cassava datasets
+
+    Return:
+        one image of Cassava dataset
     """
 
     ds = tfds.load('cassava', split='train')
@@ -17,11 +19,15 @@ def load_image():
 
 
 def preprocessing(image):
-    """
-        Normalize the data between 0 an 1, then reshape our tensor
+    """Normalize the data between 0 an 1, then reshape our tensor
 
-        Arg:
+    Arg:
         image: image that we want to preprocess
+
+    Return:
+        data: The preprocessed image
+        width: image width
+        height: image height
     """
 
     data = tf.cast(image, dtype='float32') / 255.0
@@ -36,9 +42,12 @@ def preprocessing(image):
 def inference(model, image):
     """image segmented by our neural network
 
-       Args:
+    Args:
        model: Difference Feature Clustering model
-       image: image that we want to segmented
+       image: image that we want to segment
+
+    Return:
+        c_n: output of our model with the best prediction
     """
     c_n = model(image)
     c_n = tf.argmax(c_n, axis=3)
@@ -50,10 +59,14 @@ def inference(model, image):
 def plot_pictures(predict_image, real_image):
     """Plot the two images the segmented image and the real one
 
-       Args:
+    Args:
        predict_image: Segmented Image
        real_image: real image of our dataset
+
+    Return:
+        Plot the real image and the segmented image
     """
+
     plt.figure(figsize=(25, 15))
     plt.subplot(121)
     plt.imshow(real_image)
