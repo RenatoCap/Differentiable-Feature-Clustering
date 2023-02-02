@@ -21,3 +21,33 @@ The architecture of the model is made up of a feature extractor that contains 3 
 
 ## Experiments 
 
+<div style="display: table; clear: both; content: """>
+  <img src="https://github.com/HimblerCap/Differentiable-Feature-Clustering/blob/master/img/experiment_img/real.png" width="30%" height="30%" style="vertical-align: text-bottom;">
+  <img src="https://github.com/HimblerCap/Differentiable-Feature-Clustering/blob/master/img/experiment_img/Adam_01.png" width="30%" height="30%">
+  <img src="https://github.com/HimblerCap/Differentiable-Feature-Clustering/blob/master/img/experiment_img/Adam_009.png" width="30%" height="30%">
+</div>
+
+<div style="display: table; clear: both; content: """>
+  <img src="https://github.com/HimblerCap/Differentiable-Feature-Clustering/blob/master/img/experiment_img/Adam_008.png" width="30%" height="30%">
+  <img src="https://github.com/HimblerCap/Differentiable-Feature-Clustering/blob/master/img/experiment_img/Adam_007.png" width="30%" height="30%">
+  <img src="https://github.com/HimblerCap/Differentiable-Feature-Clustering/blob/master/img/experiment_img/Adam_006.png" width="30%" height="30%">
+</div>
+
+<div style="display: table; clear: both; content: """>
+  <img src="https://github.com/HimblerCap/Differentiable-Feature-Clustering/blob/master/img/experiment_img/Adam_005.png" width="30%" height="30%">
+  <img src="https://github.com/HimblerCap/Differentiable-Feature-Clustering/blob/master/img/experiment_img/Adam_004.png" width="30%" height="30%">
+  <img src="https://github.com/HimblerCap/Differentiable-Feature-Clustering/blob/master/img/experiment_img/SGD_01_09.png" width="30%" height="30%">
+</div>
+
+<div style="display: table; clear: both; content: """>
+  <img src="https://github.com/HimblerCap/Differentiable-Feature-Clustering/blob/master/img/experiment_img/p_100_q_128.png" width="30%" height="30%">
+  <img src="https://github.com/HimblerCap/Differentiable-Feature-Clustering/blob/master/img/experiment_img/p_100_q_150.png" width="30%" height="30%">
+  <img src="https://github.com/HimblerCap/Differentiable-Feature-Clustering/blob/master/img/experiment_img/p_100_q_32.png" width="30%" height="30%">
+</div>
+
+<div style="display: table; clear: both; content: """>
+  <img src="https://github.com/HimblerCap/Differentiable-Feature-Clustering/blob/master/img/experiment_img/p_100_q_64.png" width="30%" height="30%">
+  <img src="https://github.com/HimblerCap/Differentiable-Feature-Clustering/blob/master/img/experiment_img/u_10.png" width="30%" height="30%">
+  <img src="https://github.com/HimblerCap/Differentiable-Feature-Clustering/blob/master/img/experiment_img/u_10_p_150.png" width="30%" height="30%">
+</div>
+
