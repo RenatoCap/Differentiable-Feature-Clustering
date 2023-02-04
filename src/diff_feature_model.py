@@ -7,12 +7,13 @@ class DiffFeatureModel(keras.Model):
     on Tensorflow 2.7.0"""
 
     def __init__(self, img_shape, p, q, m):
-        """This method should initialize the layers used by the model, for later use on the call method.
+        """
+        This method should initialize the layers used by the model, for later use on the call method.
         Args:
             - img_shape: Shape of the input image
-            - M: number of convolutional layers for the feature extractor
             - p: number of filters used on each conv laayer
-            - q: number of
+            - q: max number of labels that the model can segment
+            - M: number of convolutional layers for the feature extractor
         """
 
         super(DiffFeatureModel, self).__init__()
